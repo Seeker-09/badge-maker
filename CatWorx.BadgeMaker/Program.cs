@@ -3,9 +3,19 @@
 namespace CatWorx.BadgeMaker {
   class Program {
     static void Main(string[] args) {
-      string greeting = "Hello";
-      greeting = greeting + "World";
-      Console.WriteLine("greeting" + greeting);
+      List<string> employees = new List<string>();
+      while(true) {
+        Console.WriteLine("Please enter a name: ");
+        string input = Console.ReadLine() ?? "";
+        if(input == "") {
+          break;
+        }
+        employees.Add(input);
+      }
+
+      for(int i = 0; i < employees.Count; i++) {
+        Console.WriteLine(employees[i]);
+      }
     }
   }
 }
