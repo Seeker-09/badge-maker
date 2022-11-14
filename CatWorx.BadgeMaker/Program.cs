@@ -10,13 +10,13 @@ namespace CatWorx.BadgeMaker {
     static List<string> GetEmployees() {
       List<string> employees = new List<string>();
       while(true) {
-        Console.WriteLine("Please enter a name: ");
+        Console.WriteLine("Please enter a name (leave empty to exit): ");
         string input = Console.ReadLine() ?? "";
         if(input == "") {
           break;
         }
-        Employee currentEmployee = new Employee();
-        employees.Add(input);
+        Employee currentEmployee = new Employee(input, "Smith");
+        employees.Add(currentEmployee.GetFullName());
       }
 
       return employees;
